@@ -5,10 +5,12 @@ import pandas as pd
 import json
 
 # Directory containing the downloaded PDF reports
-pdf_dir = './cdc_data_extract/CDC_Flu_Reports' # Change directory path if needed
+store_path = input("Enter where you stored CDC Flu Report PDFs:\n")
+output_path = input("Enter path to store output file:\n")
+pdf_dir = store_path # Change directory path if needed
 
 # Path to the metadata file containing publish dates
-metadata_file = './cdc_data_extract/CDC_Flu_Reports/metadata.json' # Change metadata path if needed
+metadata_file = f'{store_path}/metadata.json' # Change metadata path if needed
 
 # Load metadata containing publish dates
 with open(metadata_file, 'r', encoding='utf-8') as file:
@@ -101,7 +103,6 @@ for pdf_file in os.listdir(pdf_dir):
 # Save extracted data to an Excel file if data is available
 if data_list:
     df = pd.DataFrame(data_list)
-    output_path = './cdc_流感周报提取数据.xlsx'
     df.to_excel(output_path, index=False)
     print(f"Data has been saved to {output_path}")
 else:

@@ -9,7 +9,8 @@ import json
 base_url = "https://ivdc.chinacdc.cn/cnic/zyzx/lgzb/index.htm"
 
 # Directory to save the downloaded PDF files
-output_dir = "cdc_data_extract/CDC_Flu_Reports" # Change directory path if needed
+store_path = input('Enter path to store PDF files\n')
+output_dir = store_path # Change directory path if needed
 os.makedirs(output_dir, exist_ok=True)
 
 # File to store metadata (publishing dates)
@@ -63,6 +64,7 @@ while current_page_url:
 
                 # Only process reports from 2024 and 2023
                 if not (publish_date.startswith("2024") or publish_date.startswith("2023")):
+                # CHANGE HERE IF NEEDED OTHER YEARS
                     print(f"Skipping report from {publish_date}")
                     continue
 
