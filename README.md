@@ -20,6 +20,7 @@ pip install requests beautifulsoup4 pdfplumber pandas openpyxl
 
 ## Usage
 **Script 1: cdc_report_download.py**
+
 Purpose: This script downloads flu reports (in PDF format) from the China CDC website.
 
 Run the script:
@@ -34,6 +35,7 @@ How it works:
 - Downloads PDFs and stores metadata (e.g., publish dates) in metadata.json.
 
 **Script 2: extract_pdf_table.py**
+
 Purpose: This script extracts specific data from the downloaded PDF reports.
 
 Run the script:
@@ -43,6 +45,7 @@ python extract_pdf_table.py
 
 Enter:
 The directory containing the downloaded PDF files.
+
 The output directory for saving the extracted data.
 
 How it works:
@@ -55,12 +58,16 @@ How it works:
 
 ## File Outputs
 Downloaded PDFs: Stored in the specified directory.
+
 Metadata: metadata.json in the PDF directory.
+
 Extracted Data: An Excel file containing structured data from the reports.
 
 ## Notes
 Ensure the China CDC website structure remains consistent. Adjust selectors in the scripts if necessary.
+
 Modify filtering criteria for report years or file naming patterns in the scripts as needed.
+
 Tested for flu reports from 2023 and 2024. Earlier reports might require additional adjustments.
 
 ## Contact
