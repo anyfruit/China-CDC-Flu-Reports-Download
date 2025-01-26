@@ -1,4 +1,4 @@
-# China CDC Flu Report Extractor 
+# China CDC Flu Report Extractor  
 
 This repository contains two Python scripts designed to automate the process of downloading flu reports from the China CDC website and extracting key data from the reports.
 
